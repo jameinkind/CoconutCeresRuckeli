@@ -1,9 +1,61 @@
 {% extends getPartial('page-design') %}
-
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% set showDefaultHomepage = config("Ceres.default.homepage") %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
+{% set companyName  = trans("Ceres::Template.headerCompanyName") %}
+{% block PartialHead %}
+<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
+<meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config("Ceres.meta.robots_home") }}{% endif %}">
+<meta property="og:title" content="{{ companyName }}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+<meta property="og:image" content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
+<script type="application/ld+json">
+   {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+</script>
+<title>{{ companyName }}</title>
+{% endblock %}
 {% block PageBody %}
 
-	<!-- Insert markup for homepage here -->
+<section class="slideshow">
+    <ul class="rslides">
+      <li><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></li>
+      <li><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></li>
+      <li><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></li>
+    </ul>
+</section>
 
-    <h1>My homepage</h1>
+<section class="productlisting variation-basic container">
+   {{ LayoutContainer.show("Ceres::Homepage.Container1") }}
+</section>
+<section class="productlisting variation-limited container">
+   {{ LayoutContainer.show("Ceres::Homepage.Container2") }}
+</section>
 
+<section class="boxes container">
+   <div class="first">
+   <a href="https://pftlrybf7t3i.plentymarkets-cloud01.com/seiten/welche-trage-passt-zu-mir/">
+      <h3>Slim oder Regular?</h3>
+      <p>Wir bieten die Ruckeli Babytrage in zwei unterschiedlichen Größen an, die sich individuell an Euch als Eltern orientieren.Findet schnell und unkompliziert heraus welche zu Euch passt.</p>
+   </a>
+   </div>
+   <div class="second">
+   <a href="https://pftlrybf7t3i.plentymarkets-cloud01.com/seiten/ueber-uns/">
+      <h3>Über Ruckeli</h3>
+      <p>Im Jahr 2012 wurde die berlin baby GmbH von Urs Brettel und Henner-Moritz Jahn gegründet. Ergonomie, Fairness und Nachhaltigkeit sind die drei tragenden Säulen des Unternehmens.</p>
+   </a>
+   </div>
+   <div class="third">
+   <a href="https://pftlrybf7t3i.plentymarkets-cloud01.com/seiten/material-und-herstellung/">
+      <h3>Fair und nachhaltig</h3>
+      <p>Die Ruckeli Babytrage wird in Tschechien und Bulgarien aus Bio-Baumwolle hergestellt. Alle unsere Produkte unterliegen strengen Kontrollen und Qualitätsanprüchen.</p>
+   </a>
+   </div>
+</section>
+<section class="text container">
+   <h2>Nimmst Du den Bauch heute mal?</h2>
+   <h3>Ruckeli - Die fair produzierte Babytrage aus Bio-Baumwolle</h3>
+   <p>Zur Geburt unseres ersten Kindes sollte die Ruckeli Babytrage fertig sein. Erfinder Urs Brettel hat es geschafft und ließ die Trage gemeinsam mit seiner Tochter wachsen. Seit der Markteinführung erfreut sich die Ruckeli Babytrage zunehmender Beliebtheit bei Eltern, Hebammen, Trageberaterinnen und Kangatrainerinnen. Die fair produzierte Ruckeli Babytrage aus Bio-Baumwolle erfüllt die hohen Ansprüche an ergonomische Tragehilfen und verbindet besonderen Komfort mit urbanem Design.</p>
+</section>
+    
 {% endblock %}
