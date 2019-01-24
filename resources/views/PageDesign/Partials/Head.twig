@@ -1,1 +1,49 @@
-<!-- Insert markup for head here -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="plentymarkets" />
+
+{% set lang = services.sessionStorage.getLang() %}
+
+{% if ceresConfig.global.favicon is empty %}
+    {% set favicon = url ~ '/tpl/favicon_' ~ webstoreConfig.webstoreId ~ '.ico' %}
+{% else %}
+    {% set favicon = ceresConfig.global.favicon %}
+{% endif %}
+
+<link rel="icon" type="img/ico" href="{{ favicon }}">
+
+{% set canonicalUrl = services.url.getCanonicalURL() %}
+{% set languageUrls = services.url.getLanguageURLs() %}
+
+{% if canonicalUrl is not null %}
+    <link rel="canonical" href="{{ canonicalUrl }}">
+{% endif %}
+
+{% if services.url.isCanonical() %}
+    {% for language, url in languageUrls %}
+        <link rel="alternate" hreflang="{{language}}" href="{{url}}"/>
+    {% endfor %}
+{% endif %}
+
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set logData = config("Ceres.log.data")|split(', ') %}
+{% set sortValues = config("Ceres.sort.data")|split(', ') %}
+{% set defaultSorting = config('Ceres.sort.defaultSorting') %}
+{% set defaultSortingSearch = config('Ceres.sort.defaultSortingSearch') %}
+{% set rowsPerPage = config('Ceres.pagination.rowsPerPage') | split(', ') %}
+{% set columnsPerPage = config('Ceres.pagination.columnsPerPage') %}
+{% set itemsPerPage = rowsPerPage[0] * columnsPerPage %}
+{% set performanceLevel = config('Ceres.log.performance.level') %}
+{% set itemName = config('Ceres.item.name') %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/css/stylesheet-ceres-ruckeli.css">
+<link rel="stylesheet" href="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/css/stylesheet-addon-ruckeli.css">
+
+{{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
+{{ LayoutContainer.show("Ceres::Template.Style") }}
+
+{{ get_shop_builder_styles() }}
