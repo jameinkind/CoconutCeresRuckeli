@@ -55,7 +55,7 @@
    </div>
    
       <span class="publishing" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">
-         ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }
+         Wieder erhältlich ab dem ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }
       </span>
    
    <slot name="AfterPrice"></slot>
