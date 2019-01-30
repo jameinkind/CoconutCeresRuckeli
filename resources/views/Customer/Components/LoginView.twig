@@ -17,7 +17,11 @@
                     <h1 class="login-view-title mb-5">{{ trans("Ceres::Template.login") }}</h1>
                     <login template="#vue-login" backlink="{{ backlink | url_encode }}" has-to-forward="true"></login>
                 </div>
-                <hr>
+
+
+
+
+
                 <div class="row">
                     <div class="col-sm-{% if 'my-account' not in backlink %}6{% else %}12{% endif %}">
                         <a class="btn btn-primary btn-block mb-3" href="{{ urls.registration }}{% if backlink | trim is not empty %}?backlink={{ backlink | url_encode}}{% endif %}">
