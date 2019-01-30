@@ -1,1 +1,23 @@
-<!-- Insert markup for login view here -->
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% set backlink = request.get("backlink") %}
+
+{{ component( "Ceres::Customer.Components.GuestLogin" ) }}
+
+<script type="x/template" id="vue-login-view" >
+    <div class="container-max login">
+        <div class="row m-b-3">
+            <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
+                <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary btn-block m-b-1" @click="openGuestModal()">
+                                {{ trans("Ceres::Template.loginOrderAsGuest") }}
+                            </button>
+                        </div>
+                </div>
+                {{ LayoutContainer.show("Ceres::Login.AdditionalContentAfterButtons") }}
+            </div>
+        </div>
+        <guest-login template="#vue-guest-login" backlink="{{ backlink | url_encode }}"></guest-login>
+        
+    </div>
+</script>
