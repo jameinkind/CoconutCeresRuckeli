@@ -8,12 +8,6 @@
                             </span>
     </h1>
 
-    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
-        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
-    {% endif %}
-
-    <hr>
-
     <div class="mb-5">
                             <span class="articlenumber small text-muted">
                                 <b>{{ trans("Ceres::Template.singleItemNumber") }}</b>
@@ -76,7 +70,7 @@
             {{ trans("Ceres::Template.singleItemUnitPrice") }}
             <span class="base-price-value">
                                     ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
-                                </span>
+            </span>
         </div>
     </div>
 
@@ -86,7 +80,7 @@
                             <span>
                                 ${ currentVariation.variation.availability.names.name }
                             </span>
-                        </span>
+    </span>
 
     <div class="row my-3">
         <div class="w-100">
@@ -110,22 +104,17 @@
         </div>
     </div>
 
-    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
-        <div class="row">
-            <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
-        </div>
-    {% endif %}
-    <!-- ./ITEM DETAIL -->
-
     <slot name="AdditionalContentAfterAddToBasket"></slot>
-
-    <hr>
 
     <span class="vat small text-muted">
                             * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
-                        </span>
+    </span>
 
     <slot name="AdditionalContentAfterVAT"></slot>
+    
+    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
+        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
+    {% endif %}
 
 </div>
