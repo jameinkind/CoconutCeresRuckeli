@@ -4,7 +4,7 @@
             <div class="input-unit" ref="labelBoxRef">
             <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">Bitte wähle eine Variante:</label>
                 <select size="3" class="custom-select" v-model="selectedAttributes[attributeId]" @change="onSelectionChange(selectedAttributes[attributeId])">
-                        <option :value="null" v-if="hasEmptyOption">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
+                        <option :value="null" v-if="hasEmptyOption" selected>{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
                         <option
                             v-for="(attributeValue, attributeValueId) in attribute.values"
                             :value="attributeValueId"
@@ -18,7 +18,7 @@
             <div class="input-unit">
             <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">Bitte wähle eine Variante:</label>
                 <select size="3" class="custom-select" v-model="selectedUnitId" @change="onSelectionChange(possibleUnitIds[selectedUnitId])">
-                    <option :value="0" v-if="hasEmptyOption">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
+                    <option :value="0" v-if="hasEmptyOption" selected>{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
                     <option
                             v-for="unitCombinationId in possibleUnitIds"
                             :value="unitCombinationId">
@@ -27,7 +27,7 @@
                 </select>
                 
                 <ul class="custom-select text-gray-dark" v-model="selectedUnitId" @change="onSelectionChange(possibleUnitIds[selectedUnitId])">
-                    <li :value="0" v-if="hasEmptyOption">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</li>
+                    <li :value="0" v-if="hasEmptyOption" selected>{{ trans("Ceres::Template.singleItemPleaseSelect") }}</li>
                     <li
                             v-for="unitCombinationId in possibleUnitIds"
                             :value="unitCombinationId">
