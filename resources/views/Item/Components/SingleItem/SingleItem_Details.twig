@@ -30,6 +30,12 @@
     <!-- Item Bundle -->
     <item-bundle :bundle-type="currentVariation.variation.bundleType" :bundle-components="currentVariation.bundleComponents"></item-bundle>
     <!-- /Item Bundle -->
+    
+    <span class="publishing">
+        <div class="h1" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">
+            Erscheint am: ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }
+        </div>
+    </span>
 
     <slot name="BeforePrice"></slot>
 
