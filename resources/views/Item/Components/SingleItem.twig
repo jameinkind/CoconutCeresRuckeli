@@ -11,17 +11,15 @@
         <div class="single container-max page-content">
             <div class="row mt-5 position-relative">
 
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <slot name="ImageCarousel"></slot>
                 </div>
 
-                <div class="col-md-5 single-rightside">
+                <div class="col-md-4 single-rightside">
                     {% include "CeresCoconut::Item.Components.SingleItem.SingleItem_Details" %}
-                </div>
-
-                <div class="col-md-7">
                     {% include "CeresCoconut::Item.Components.SingleItem.SingleItem_InformationTable" %}
                 </div>
+
             </div>
 
             <slot name="ItemListContainer"></slot>
