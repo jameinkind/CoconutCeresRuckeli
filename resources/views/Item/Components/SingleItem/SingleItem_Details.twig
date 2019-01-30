@@ -23,16 +23,6 @@
       <order-property-list></order-property-list>
    </div>
    
-   <div class="mb-3" v-if="variations.length > 0">
-      <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
-   </div>
-   
-   <span class="publishing">
-      <div class="h1" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">
-         ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }
-      </div>
-   </span>
-   
       <span class="price h1">
          <span :content="currentVariation.prices.default.currency"></span>
          <span ref="variationTotalPrice" :content="currentVariation.prices.default.price.value">
@@ -58,6 +48,14 @@
          </span>
       </div>
    </div>
+   
+      <div class="mb-3" v-if="variations.length > 0">
+      <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variation-units="variationUnits" :variations="variations" :preselect="currentVariation.variation.id" :unitPreselect="currentVariation.variation.unitCombinationId" @is-valid-change="isVariationSelected = $event"></variation-select>
+   </div>
+   
+      <span class="publishing" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">
+         ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }
+      </span>
    
    <slot name="AfterPrice"></slot>
 
