@@ -38,13 +38,15 @@
 {% set performanceLevel = config('Ceres.log.performance.level') %}
 {% set itemName = config('Ceres.item.name') %}
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/css/stylesheet-ceres-ruckeli.css">
-<link rel="stylesheet" href="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/css/stylesheet-addon-ruckeli.css">
-<link rel="stylesheet" href="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/css/stylesheet-responsive-ruckeli.css">
+{% if LayoutContainer.show("Ceres::Template.StyleOverwrite") | trim is empty %}
+    <link data-sass-root="{{ plugin_path('Ceres') }}" data-sass-original="{{ plugin_path('Ceres') }}/css/ceres-legacy.scss" rel="stylesheet" href="{{ plugin_path('Ceres') }}/css/ceres-legacy.css">
+{% endif %}
 
 {{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
 {{ LayoutContainer.show("Ceres::Template.Style") }}
 
 {{ get_shop_builder_styles() }}
