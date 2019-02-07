@@ -10,6 +10,8 @@
                     
                     <div class="row guest-login">
                     {% if "my-account" not in backlink %}
+                    <h2>Fast geschafft</h2>
+                    <p>Im nächsten Schritt gelangen Sie zur Kasse, hier können Sie Ihre Einkaufstasche noch einmal überprüfen, sowie Zahlungs- und Versandangaben vornehmen.</p>
                             <button class="btn btn-primary btn-block mb-3" @click="openGuestModal()">
                                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                 {{ trans("Ceres::Template.loginOrderAsGuest") }}
