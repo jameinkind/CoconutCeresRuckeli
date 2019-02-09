@@ -2,7 +2,7 @@
 {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
 {{ component( "Ceres::ItemList.Components.ItemStoreSpecial" ) }}
 
-{% import "CeresCoconut::Basket.Macros.AddToBasket" as AddToBasket %}
+{% import "Ceres::Basket.Macros.AddToBasket" as AddToBasket %}
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
@@ -14,8 +14,6 @@
         {% set enableCarousel = "false" %}
     {% endif %}
 {% endif %}
-
-ItemList - Components - CateroryItem
 
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
