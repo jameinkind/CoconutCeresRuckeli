@@ -1,6 +1,6 @@
-{{ component( "CeresCoconut::Containers.Components.LastSeenItemList" ) }}
-{{ component( "CeresCoconut::ItemList.Components.CategoryItem") }}
-{{ component( "CeresCoconut::PageDesign.Components.Carousel" ) }}
+{{ component( "Ceres::Containers.Components.LastSeenItemList" ) }}
+{{ component( "Ceres::ItemList.Components.CategoryItem") }}
+{{ component( "Ceres::PageDesign.Components.Carousel" ) }}
 
 {% set listType = config("Ceres.item.lists." ~ itemListNo ~ ".list_type") %}
 {% set tagIds = config("Ceres.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
@@ -22,7 +22,7 @@
                         <hr>
                     {% endif %}
 
-                    {% include 'CeresCoconut::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+                    {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
                 </div>
             </last-seen-item-list>
         </div>
@@ -32,7 +32,7 @@
                 <hr>
             {% endif %}
 
-            {% include 'CeresCoconut::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+            {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
         </div>
         <div class="col-12">
             <carousel>
