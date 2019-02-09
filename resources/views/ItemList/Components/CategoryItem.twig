@@ -65,7 +65,7 @@ ItemList - Components - CateroryItem
                                 </del>
                             </div>
                             <div class="price">
-                                ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") } *
+                                ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") }
                             </div>
                         </div>
                         <div class="category-unit-price" v-if="!(itemData.unit.unitOfMeasurement === 'C62' && itemData.unit.content === 1)">
