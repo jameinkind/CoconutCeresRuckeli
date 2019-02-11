@@ -4,9 +4,6 @@
             <div class="input-unit" ref="labelBoxRef">
             <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">Bitte wähle eine Variante:</label>
                 <select size="3" class="custom-select" v-model="selectedAttributes[attributeId]" @change="onSelectionChange(selectedAttributes[attributeId])">
- 
- <option selected style="display:none"></option>
- 
  <option
                             v-for="(attributeValue, attributeValueId) in attribute.values"
                             :value="attributeValueId"
@@ -20,7 +17,6 @@
             <div class="input-unit">
             <label v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.singleItemContent") }}">Bitte wähle eine Variante:</label>
                 <select size="3" class="custom-select" v-model="selectedUnitId" @change="onSelectionChange(possibleUnitIds[selectedUnitId])">
-<option selected style="display:none"></option>
 <option
                             v-for="unitCombinationId in possibleUnitIds"
                             :value="unitCombinationId">
