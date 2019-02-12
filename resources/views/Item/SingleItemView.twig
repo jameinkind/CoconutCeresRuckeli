@@ -36,15 +36,25 @@
                     <div class="singleview-image">
                         <img src=" https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/singleview-addon-image-links.jpg" alt="">
                     </div>
-                    <div class="singleview-text">
+					
+                    <div id="single-addon-1" style="display:none;" class="singleview-block">
                         <h4>Beispielüberschrift</h4>
                         <p>Hier steht der Text aus der linken Box.</p>
                     </div>
-                </div>
-                <div class="singleview-addon-right">
-                    <div class="singleview-text">
+					
+					<div class="singleview-text">
+                        <div onclick="if(document.getElementById('single-addon-1').style.display=='none'){document.getElementById('single-addon-1').style.display='block';}else {document.getElementById('single-addon-1').style.display='none'; }">Mehr...</div>
+                    </div>
+					
+              </div>
+                <div id="single-addon-2" style="display:none;" class="singleview-addon-right">
+                    <div id="single-addon-1" style="display:none;" class="singleview-block">
                         <h4>Beispielüberschrift</h4>
                         <p>Hier steht der Text aus der rechten Box.</p>
+                    </div>
+					
+				  <div class="singleview-text">
+                        <div onclick="if(document.getElementById('single-addon-1').style.display=='none'){document.getElementById('single-addon-1').style.display='block';}else {document.getElementById('single-addon-1').style.display='none'; }">Mehr...</div>
                     </div>
                     <div class="singleview-image">
                         <img src=" https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/singleview-addon-image-rechts.jpg" alt="">
@@ -52,27 +62,6 @@
                 </div>
                 <div class="clear"></div>
           </div>
-          <div class="singleview-addon-row">
-                <div class="singleview-addon-left">
-                    <div class="singleview-image">
-                        <img src=" https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/singleview-addon-image-links.jpg" alt="">
-                    </div>
-                    <div class="singleview-text">
-                        <h4>Beispielüberschrift</h4>
-                        <p>Hier steht der Text aus der linken Box.</p>
-                    </div>
-                </div>
-                <div class="singleview-addon-right">
-                    <div class="singleview-text">
-                        <h4>Beispielüberschrift</h4>
-                        <p>Hier steht der Text aus der rechten Box.</p>
-                    </div>
-                    <div class="singleview-image">
-                        <img src=" https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/singleview-addon-image-rechts.jpg" alt="">
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
         </div>
     </div>
     
