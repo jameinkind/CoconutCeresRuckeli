@@ -18,9 +18,11 @@
 {% block PageBody %}
 
 <section class="slideshow" id="slideshow">
-    <ul class="slide-wrapper">
-      <li><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></li>
-    </ul>
+    <div class="slide-wrapper">
+       <div class="slide"><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></div>
+       <div class="slide"><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli">/div>
+       <div class="slide"><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/slideshow-1-ruckeli.jpg" alt="Ruckeli"></div>
+   </div>
 </section>
 
 <section class="productlisting variation-basic container">
@@ -29,8 +31,6 @@
 <section class="productlisting variation-limited container">
    {{ LayoutContainer.show("Ceres::Homepage.Container2") }}
 </section>
-
-<h1>Just a simple slideshow. CSS only, no JS</h1>
 
 <section class="boxes container">
    <div>
