@@ -40,6 +40,7 @@
                     <div id="single-addon-1" style="display:none;" class="singleview-block">
                         <h4>Beispielüberschrift</h4>
                         <p>Hier steht der Text aus der linken Box.</p>
+<div class="singleview-block-close" onclick="if(document.getElementById('single-addon-1').style.display=='block'){document.getElementById('single-addon-1').style.display='none';}else {document.getElementById('single-addon-1').style.display='block'; }">x schließen</div>
                     </div>
 					
 					<div class="singleview-text">
@@ -51,10 +52,11 @@
                     <div id="single-addon-2" style="display:none;" class="singleview-block">
                         <h4>Beispielüberschrift</h4>
                         <p>Hier steht der Text aus der rechten Box.</p>
+			 <div class="singleview-block-close" onclick="if(document.getElementById('single-addon-2').style.display=='block'){document.getElementById('single-addon-2').style.display='none';}else {document.getElementById('single-addon-2').style.display='block'; }">x schließen</div>
                     </div>
 					
-				  <div class="singleview-text">
-                        <div onclick="if(document.getElementById('single-addon-1').style.display=='none'){document.getElementById('single-addon-1').style.display='block';}else {document.getElementById('single-addon-1').style.display='none'; }">Mehr...</div>
+			<div class="singleview-text">
+                        <div onclick="if(document.getElementById('single-addon-2').style.display=='none'){document.getElementById('single-addon-2').style.display='block';}else {document.getElementById('single-addon-2').style.display='none'; }">Mehr...</div>
                     </div>
                     <div class="singleview-image">
                         <img src=" https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/singleview-addon-image-rechts.jpg" alt="">
