@@ -32,7 +32,7 @@
    
    <div class="vat-shipping">
    <span class="shipping">{% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %}</span>
-   <span class="vat">{{ trans("Ceres::Template.singleItemExclusive") }} <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a></span>
+   <span class="vat test">{{ trans("Ceres::Template.singleItemExclusive") }} <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a></span>
    </div>
    
    <div class="base-price text-muted my-3" v-if="currentVariation.unit">
