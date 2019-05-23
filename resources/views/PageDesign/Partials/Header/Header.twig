@@ -6,8 +6,21 @@
     	</div>
 	<div class="header-basket">
       		<ul>
-    			<li><a href="/login">H&auml;ndler-Login</a></li>
+    			<li><div class="content-link" onclick="if(document.getElementById('seller-login').style.display=='none'){ document.getElementById('seller-login').style.display='block'; } else {document.getElementById('seller-login').style.display='none';}">H&auml;ndler-Login</div></li>
         		<li><a v-toggle-basket-preview href="#" class="toggle-basket-preview">Einkaufstasche (<span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>)</a></li>
       		</ul>
     	</div>
 </header>
+
+
+
+ <div class="row seller-login" id="seller-login" style="display:none;">
+                    <div class="seller-login-close" onclick="if(document.getElementById('sellerlogin').style.display=='block'){ document.getElementById('sellerlogin').style.display='none';} else {document.getElementById('sellerlogin').style.display='block'; }"><i class="fas fa-times"></i> Händler-Login schließen</div>
+                    <div>
+                        <h1 class="login-view-title mb-5">{{ trans("Ceres::Template.login") }}</h1>
+                        <login template="#vue-login" backlink="{{ backlink | url_encode }}" has-to-forward="true"></login>
+                    </div>
+                    </div>
+
+
+<label >Händler-Login</label>
