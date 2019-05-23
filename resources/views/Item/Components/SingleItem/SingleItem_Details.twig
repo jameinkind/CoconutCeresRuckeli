@@ -63,7 +63,11 @@
       <div class="w-100">
          <slot name="BeforeAddToBasket"></slot>
       </div>
-      <div class="w-100">
+      
+      
+      
+      
+      <div class="w-100" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) < Date.now()">
          {{ AddToBasket.printVueComponent(
          "currentVariation",
          false,
@@ -74,6 +78,19 @@
          }
          ) }}
       </div>
+      
+      
+      
+      <div class="w-100" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">
+<div class="btn btn-block btn-primary not-available"><i class="far fa-times-circle"></i>
+                            In die Einkaufstasche
+                        </div>
+      </div>
+      
+      
+      
+      
+      
       <div class="w-100">
          <slot name="AfterAddToBasket"></slot>
       </div>
