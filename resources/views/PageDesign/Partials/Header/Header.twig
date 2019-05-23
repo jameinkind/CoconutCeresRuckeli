@@ -14,10 +14,10 @@
 
 
 
- <div class="row seller-login" id="seller-login" style="display:none;">
+ 		<div class="seller-login-popup" id="seller-login" style="display:none;">
                     <div class="seller-login-close" onclick="if(document.getElementById('sellerlogin').style.display=='block'){ document.getElementById('sellerlogin').style.display='none';} else {document.getElementById('sellerlogin').style.display='block'; }"><i class="fas fa-times"></i> Händler-Login schließen</div>
                     <div>
                         <h1 class="login-view-title mb-5">{{ trans("Ceres::Template.login") }}</h1>
                         <login template="#vue-login" backlink="{{ backlink | url_encode }}" has-to-forward="true"></login>
                     </div>
-                    </div>
+                </div>
