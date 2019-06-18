@@ -9,126 +9,119 @@
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
 
 <single-item v-cloak template="#vue-single-item" item-data="{{ item | json_data }}" variation-list-data="{{ variations | json_data }}" :attribute-name-map="{{attributeNameMap | json_encode}}" :variation-units="{{variationUnits | json_encode}}">
-    <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
-    <template #after-price>{{ LayoutContainer.show("Ceres::SingleItem.AfterPrice", item.documents[0].data) }}</template>
-    <template #before-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.BeforeAddToBasket", item.documents[0].data) }}</template>
-    <template #after-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.AfterAddToBasket", item.documents[0].data) }}</template>
-    <template #additional-content-after-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.AdditionalContentAfterAddToBasket", item.documents[0].data) }}</template>
-    <template #additional-content-after-vat>{{ LayoutContainer.show("Ceres::SingleItem.AdditionalContentAfterVAT", item.documents[0].data) }}</template>
-    <template #add-detail-tabs>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabs", item.documents[0].data) }}</template>
-    <template #add-detail-tabs-content>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabsContent", item.documents[0].data) }}</template>
-    <template #item-list-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</template>
-    <template #feedback-container>{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
-    <template #image-carousel>
-        {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
-        {% if ImageCarouselOverride|trim is empty %}
-            <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
-        {% else %}
-            {{ ImageCarouselOverride }}
-        {% endif %}
-    </template>
+   <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
+   <template #after-price>{{ LayoutContainer.show("Ceres::SingleItem.AfterPrice", item.documents[0].data) }}</template>
+   <template #before-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.BeforeAddToBasket", item.documents[0].data) }}</template>
+   <template #after-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.AfterAddToBasket", item.documents[0].data) }}</template>
+   <template #additional-content-after-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.AdditionalContentAfterAddToBasket", item.documents[0].data) }}</template>
+   <template #additional-content-after-vat>{{ LayoutContainer.show("Ceres::SingleItem.AdditionalContentAfterVAT", item.documents[0].data) }}</template>
+   <template #add-detail-tabs>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabs", item.documents[0].data) }}</template>
+   <template #add-detail-tabs-content>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabsContent", item.documents[0].data) }}</template>
+   <template #item-list-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</template>
+   <template #feedback-container>{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
+   <template #image-carousel>
+      {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
+      {% if ImageCarouselOverride|trim is empty %}
+      <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
+      {% else %}
+      {{ ImageCarouselOverride }}
+      {% endif %}
+   </template>
 </single-item>
 
 <section class="productlisting container">
-    {{ LayoutContainer.show("Ceres::Homepage.Container3") }}
+   {{ LayoutContainer.show("Ceres::Homepage.Container3") }}
 </section>
-    
-    <div class="singleview-addon">
-		<div class="singleview-addon-box">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_1.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				<h4>BAUCHTRAGEWEISE</h4>
-				<p>Besonders geeignet für den geborgenen Start ins Leben oder den schlaf zwischendurch.</p>
-			</div>
-	    </div>
-		<div class="singleview-addon-box float-right">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_2.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				<h4>RÜCKENTRAGEWEISE</h4>
-				<p>Besonders geeignet für schwerere Kinder und für Längere Wanderungen.</p>
-			</div>
-	    </div>
-		<div class="singleview-addon-box">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_3.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				
-				<h4>TRAGEN AUF DEM HÜFTSITZ</h4>
-				<p>Besonders geeignet für das kurze Trage zwischendurch.</p>
-			</div>
-	    </div>
-		<div class="singleview-addon-box float-right">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_4.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				<h4>HÜFTTRAGEWEISE</h4>
-				<p>Besonders geeignet wenn die Kleinen mehr sehen wollen.</p>
-			</div>
-	    </div>
-		<div class="singleview-addon-box">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_5.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
 
-
-
-
-<h4>STEGBREITE</h4>
-				<p>--in 5 Stufen von 13 - 34 cm an die wachsende Beinlänge des Kindes anpassbar<br>
---unterstützt die ergonomische Anhock-Spreizhaltung</p>
-<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img01a.jpg" alt="">
-<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img01b.jpg" alt="">
-			</div>
-	    </div>
-		<div class="singleview-addon-box float-right">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_6.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-
-
-
-
-
-				<h4>RÜCKENLÄNGE</h4>
-				<p>--Stufenlos verstellbare 26 - 43 cm<br>
---lässt sich einfach einstellen, auch wenn dein 
-Kind schon in der Trage sitzt</p>
-<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img02a.jpg" alt="">
-<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img02b.jpg" alt="">
-
-			</div>
-	    </div>
-		<div class="singleview-addon-box">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_7.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				<h4>TASCHE AM HÜFTGURT</h4>
-				<p>--zum einfachen verstauen von Kleinigkeiten wärend des Tragens<br>
---zum verstauen der Ganzen Trage in sich selbst</p>
-			</div>
-	    </div>
-		<div class="singleview-addon-box">
-			<div class="singleview-image">
-				<img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_8.jpg" alt="Ruckeli">
-			</div>
-			<div class="singleview-text">
-				<h4>SCHULTERGURTE</h4>
-				<p>--2 Gurtverläufe möglich
---Überkreuz-Verlauf für entlastung beim Tragen vorm Bauch<br>
---Paralel-Verlauf für ein bequemes Tragen auf dem Rücken<br>
---breit geschnitten für eine optimale Verteilung des Gewichts<br>
---weich gepolstert und an die Körperform angepasst<br>
---besonders flach geschnitten, für ein angenehmes Tragen unter einer Jacke oder </p>
-			</div>
-	    </div>
-	    <div style="clear:both;height:0"></div>
-	</div>
+<div class="singleview-addon">
+   <div class="singleview-addon-box">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_1.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>BAUCHTRAGEWEISE</h4>
+         <p>Besonders geeignet für den geborgenen Start ins Leben oder den schlaf zwischendurch.</p>
+      </div>
+   </div>
+   <div class="singleview-addon-box float-right">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_2.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>RÜCKENTRAGEWEISE</h4>
+         <p>Besonders geeignet für schwerere Kinder und für Längere Wanderungen.</p>
+      </div>
+   </div>
+   <div class="singleview-addon-box">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_3.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>TRAGEN AUF DEM HÜFTSITZ</h4>
+         <p>Besonders geeignet für das kurze Trage zwischendurch.</p>
+      </div>
+   </div>
+   <div class="singleview-addon-box float-right">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_4.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>HÜFTTRAGEWEISE</h4>
+         <p>Besonders geeignet wenn die Kleinen mehr sehen wollen.</p>
+      </div>
+   </div>
+   <div class="singleview-addon-box">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_5.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>STEGBREITE</h4>
+         <p>--in 5 Stufen von 13 - 34 cm an die wachsende Beinlänge des Kindes anpassbar<br>
+            --unterstützt die ergonomische Anhock-Spreizhaltung
+         </p>
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img01a.jpg" alt="">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img01b.jpg" alt="">
+      </div>
+   </div>
+   <div class="singleview-addon-box float-right">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_6.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>RÜCKENLÄNGE</h4>
+         <p>--Stufenlos verstellbare 26 - 43 cm<br>
+            --lässt sich einfach einstellen, auch wenn dein 
+            Kind schon in der Trage sitzt
+         </p>
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img02a.jpg" alt="">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single-addon-img02b.jpg" alt="">
+      </div>
+   </div>
+   <div class="singleview-addon-box">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_7.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>TASCHE AM HÜFTGURT</h4>
+         <p>--zum einfachen verstauen von Kleinigkeiten wärend des Tragens<br>
+            --zum verstauen der Ganzen Trage in sich selbst
+         </p>
+      </div>
+   </div>
+   <div class="singleview-addon-box">
+      <div class="singleview-image">
+         <img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/single_addon_8.jpg" alt="Ruckeli">
+      </div>
+      <div class="singleview-text">
+         <h4>SCHULTERGURTE</h4>
+         <p>--2 Gurtverläufe möglich
+            --Überkreuz-Verlauf für entlastung beim Tragen vorm Bauch<br>
+            --Paralel-Verlauf für ein bequemes Tragen auf dem Rücken<br>
+            --breit geschnitten für eine optimale Verteilung des Gewichts<br>
+            --weich gepolstert und an die Körperform angepasst<br>
+            --besonders flach geschnitten, für ein angenehmes Tragen unter einer Jacke oder 
+         </p>
+      </div>
+   </div>
+   <div style="clear:both;height:0"></div>
+</div>
