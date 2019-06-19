@@ -65,6 +65,9 @@
     <div class="row" v-if="currentVariation.filter.isSalable && variationGroupedProperties.length">
         <order-property-list></order-property-list>
     </div>
+    
+    <span class="publishing" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">Wieder erhältlich ab dem ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }</span>
+
 
     <slot name="after-price"></slot>
 
@@ -86,8 +89,6 @@
             ) }}
         </div>
         
-        <span class="publishing" v-if="currentVariation.variation.releasedAt && new Date(currentVariation.variation.releasedAt) > Date.now()">Wieder erhältlich ab dem ${ currentVariation.variation.releasedAt | date("DD.MM.YYYY") }</span>
-
         <div class="w-100">
             <slot name="after-add-to-basket"></slot>
         </div>
