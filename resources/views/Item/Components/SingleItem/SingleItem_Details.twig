@@ -45,10 +45,6 @@
         <span class="vat test">{{ trans("Ceres::Template.singleItemExclusive") }} <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a></span>
     </div>
 
-    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
-        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
-    {% endif %}
-
     <div class="mb-5">
         <span class="articlenumber small text-muted">
             <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
@@ -74,12 +70,6 @@
 
     <slot name="after-price"></slot>
 
-    <span v-if="currentVariation.variation.availability" :class="'availability badge availability_' + currentVariation.variation.availability.id">
-        <span>
-            ${ currentVariation.variation.availability.names.name }
-        </span>
-    </span>
-
     <div class="row my-3">
         <div class="w-100">
             <slot name="before-add-to-basket"></slot>
@@ -103,23 +93,17 @@
         </div>
     </div>
 
-    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
-        <div class="row">
-            <div class="col-12">
-                <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
-            </div>
-        </div>
+    <span v-if="currentVariation.variation.availability" :class="'availability badge availability_' + currentVariation.variation.availability.id">
+        <span>
+            ${ currentVariation.variation.availability.names.name }
+        </span>
+    </span>
+    
+    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
+        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
     {% endif %}
-    <!-- ./ITEM DETAIL -->
 
     <slot name="additional-content-after-add-to-basket"></slot>
-
-    <hr>
-
-    <span class="vat small text-muted">
-                            * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
-        <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
-                        </span>
 
     <slot name="additional-content-after-vat"></slot>
 
