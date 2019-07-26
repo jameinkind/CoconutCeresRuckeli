@@ -30,6 +30,22 @@
    {{ LayoutContainer.show("Ceres::Homepage.Container2") }}
 </section>
 
+{{ component( "Ceres::ItemList.Components.CategoryItem") }}
+{% set itemList = services.item.getVariations([1068,1131]).documents %}
+
+<ul class="product-list row grid">
+    {% for item in itemList %}
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+           	<category-item
+                :item-data="{{ item.data | json_encode }}"
+                :decimal-count="{{ ceresConfig.item.storeSpecial }}">
+              	<template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+             </category-item>
+        </li>
+   {% endfor %}
+</ul>
+
 <section class="boxes container">
    <div>
    <a href="https://pftlrybf7t3i.plentymarkets-cloud01.com/seiten/welche-trage-passt-zu-mir/">
