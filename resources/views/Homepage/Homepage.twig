@@ -31,9 +31,9 @@
 </section>
 
 {{ component( "Ceres::ItemList.Components.CategoryItem") }}
-{% set itemList = services.item.getVariations([1068,1131]).documents %}
+{% set itemList = services.item.getVariations([1068,1131,1134,1135,1142,1139,1138,1137,1136]).documents %}
 
-<ul class="product-list row grid">
+<ul class="productlisting variation-limited container">
     {% for item in itemList %}
         <li class="col-12 col-sm-6 col-md-4 col-lg-3">
            	<category-item
