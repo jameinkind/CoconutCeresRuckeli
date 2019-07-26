@@ -6,8 +6,9 @@
     	</div>
 	<div class="header-basket">
       		<ul>
-    			<li><div class="content-link" onclick="if(document.getElementById('seller-login').style.display=='none'){ document.getElementById('seller-login').style.display='block'; } else {document.getElementById('seller-login').style.display='none';}">H&auml;ndler-Login</div></li>
-        		<li><a v-toggle-basket-preview href="#" class="toggle-basket-preview">Einkaufstasche (<span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>)</a></li>
+    			<!--li><div class="content-link" onclick="if(document.getElementById('seller-login').style.display=='none'){ document.getElementById('seller-login').style.display='block'; } else {document.getElementById('seller-login').style.display='none';}">H&auml;ndler-Login</div></li-->
+			<li><a href="/seiten/haendler-login/">H&auml;ndler-Login</a></li>
+			<li><a v-toggle-basket-preview href="#" class="toggle-basket-preview">Einkaufstasche (<span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>)</a></li>
       		</ul>
     	</div>
 </header>
