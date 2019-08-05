@@ -1,6 +1,6 @@
 <div v-stick-in-parent>
-    <div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
-        ${ currentVariation.item.manufacturer.externalName }
+     <div class="variationtype">
+        ${ currentVariation.texts.name3 }
     </div>
 
     <h1 class="h2 title">
@@ -9,18 +9,7 @@
         </span>
     </h1>
 
-    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
-        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
-    {% endif %}
-
-    <div class="mb-5">
-                            <span class="articlenumber">
-                                <b>{{ trans("Ceres::Template.singleItemId") }}:&nbsp; </b>
-                                <span>1 ${ currentVariation.item.id }</span>
-                                <span>2 $CurrentItemId </span>
-                                <span>3 ${CurrentItemId} </span>
-                            </span>
-                            
+    <div class="mb-5">                            
                             
      <div class="base-price text-muted my-3" v-if="currentVariation.unit">
         <div>
@@ -119,5 +108,9 @@
                         </span>
 
     <slot name="AdditionalContentAfterVAT"></slot>
+    
+    {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
+        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
+    {% endif %}
 
 </div>
