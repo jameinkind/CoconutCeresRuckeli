@@ -20,8 +20,8 @@
         <div v-if="currentVariation.variation.mayShowUnitPrice">
             {{ trans("Ceres::Template.singleItemUnitPrice") }}
             <span class="base-price-value">
-                                    ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
-                                </span>
+               ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
+            </span>
         </div>
     </div>
     </div>
