@@ -25,8 +25,8 @@
                 <!-- box and image -->
                 <div v-else-if="attribute.type === 'box' || attribute.type === 'image'">
                     <span class="text-muted">${ attribute.name }:</span> <b>${ getSelectedAttributeValueName(attribute) }</b>
-                    <div class="v-s-boxes py-3" :class="{ 'images': attribute.type === 'image' }">
-                        <div class="v-s-box bg-white empty-option"
+                    <div class="v-s-boxes" :class="{ 'images': attribute.type === 'image' }">
+                        <div class="v-s-box empty-option"
                             v-if="hasEmptyOption"
                             @click="selectAttribute(attribute.attributeId, null)"
                             :class="{ 'active': selectedAttributes[attribute.attributeId] === null, 'invalid': !isAttributeSelectionValid(attribute.attributeId, null) }">
