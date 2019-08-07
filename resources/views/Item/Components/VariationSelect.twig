@@ -24,7 +24,6 @@
 
                 <!-- box and image -->
                 <div v-else-if="attribute.type === 'box' || attribute.type === 'image'">
-                    <span class="variante-select">DAusgewählte ${ attribute.name }: <b>${ getSelectedAttributeValueName(attribute) }</b></span>
                     <div class="v-s-boxes" :class="{ 'images': attribute.type === 'image' }">
                         <div class="v-s-box empty-option"
                             v-if="hasEmptyOption"
