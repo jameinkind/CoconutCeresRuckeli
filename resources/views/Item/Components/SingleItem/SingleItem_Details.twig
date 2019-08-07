@@ -43,13 +43,6 @@
 
 <slot name="after-price"></slot>
 
-<div class="mb-5">
-    <span class="articlenumber small text-muted">
-        <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
-        <span>${ currentVariation.variation.number }</span>
-    </span>
-</div>
-
 <span class="vat-shipping">
     {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
     <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
