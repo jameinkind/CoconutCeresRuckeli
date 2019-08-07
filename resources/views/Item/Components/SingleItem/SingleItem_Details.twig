@@ -48,6 +48,8 @@
     <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
 </span>
 
+<slot name="additional-content-after-vat"></slot>
+
 <!-- Variation -->
 <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
     <span>Bitte wähle eine Variante:</span>
@@ -97,8 +99,6 @@
 <!-- ./ITEM DETAIL -->
 
 <slot name="additional-content-after-add-to-basket"></slot>
-
-<slot name="additional-content-after-vat"></slot>
 
 {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
     <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
