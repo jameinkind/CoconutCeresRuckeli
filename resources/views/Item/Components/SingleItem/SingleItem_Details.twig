@@ -43,7 +43,7 @@
 
 <span class="vat-shipping">
     {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} <br/>
-    <a data-toggle="modal" href="#shippingscosts" title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+    {% ${ variationTotalPrice | currency(currentVariation.prices.default.currency) } > 50 %}inkl. {% endif %}{{ trans("Ceres::Template.singleItemShippingCosts") }}
 </span>
 
 <slot name="additional-content-after-vat"></slot>
