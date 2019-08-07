@@ -50,6 +50,7 @@
 
 <!-- Variation -->
 <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
+    <span>Bitte wähle eine Variante:</span>
     <variation-select></variation-select>
 </div>
 <!-- /Variation -->
@@ -61,7 +62,7 @@
 <slot name="before-price"></slot>
 
 <div v-if="currentVariation.filter.isSalable && variationGroupedProperties.length">
-    <span>Bitte wähle eine Variante:</span><order-property-list></order-property-list>
+    <order-property-list></order-property-list>
 </div>
 
 <div class="my-3">
