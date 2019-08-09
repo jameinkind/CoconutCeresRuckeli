@@ -1,23 +1,3 @@
-    <header class="page">
-	    <div class="container">
-    		<div class="header-logo">
-    			<a href="/"><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/logo-head-ruckeli.jpg" alt="Ruckeli"></a>
-    		</div>
-    	</div>
-      <div class="header-basket">
-        <ul>
-           <li><a href="/seiten/haendler-login/">H&auml;ndler-Login</a></li>
-           <li><user-login-handler><a data-toggle="modal">H&auml;ndler-Login</a></user-login-handler></li>
-           <li><a v-toggle-basket-preview href="#" class="toggle-basket-preview">Einkaufstasche (<span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>)</a></li>
-        </ul>
-      </div>
-    </header>
-
-
-
-
-
-
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {{ component( "Ceres::Customer.Components.UserLoginHandler" ) }}
@@ -34,44 +14,19 @@
 {% set currencyFormat = config("Ceres.currency.format") %}
 {% set currencyFormatSelect = config("Ceres.currency.format_selection") %}
 
-
 {% set headerContainer = LayoutContainer.show("Ceres::Header") | trim %}
-{% if headerContainer is empty %}
-    {% include "Ceres::PageDesign.Partials.Header.DefaultHeader" %}
-{% else %}
-<header id="page-header" class="fixed-top">
-    <div class="container-max">
-        <div class="row">
-            <div id="page-header-parent" class="col-12">
-                {{ headerContainer | raw }}
-            </div>
-        </div>
-    </div>
-</header>
-{% endif %}
-
-{% set scriptId = uid() %}
-<script id="{{ scriptId }}">
-    var vueApp = document.getElementById("vue-app");
-    var pageHeader = document.getElementById("page-header");
-
-    if ( !!vueApp && !!pageHeader )
-    {
-        vueApp.style.marginTop = pageHeader.getBoundingClientRect().height + 'px';
-    }
-
-    var scriptElement = document.getElementById("{{ scriptId }}");
-    scriptElement.parentElement.removeChild(scriptElement);
-</script>
-
-<div>
-    {% if category.linklist == "Y" %}
-        {% set initialCategory = { id: category.id } %}
-    {% else %}
-        {% set initialCategory = category %}
-    {% endif %}
-    <mobile-navigation
-            :initial-category="{{ initialCategory | json_encode }}"
-            template="#vue-mobile-navigation">
-    </mobile-navigation>
-</div>
+    
+    <header class="page">
+	    <div class="container">
+    		<div class="header-logo">
+    			<a href="/"><img src="https://cdn02.plentymarkets.com/pftlrybf7t3i/frontend/logo-head-ruckeli.jpg" alt="Ruckeli"></a>
+    		</div>
+    	</div>
+      <div class="header-basket">
+        <ul>
+           <li><a href="/seiten/haendler-login/">H&auml;ndler-Login</a></li>
+           <li><user-login-handler><a data-toggle="modal">H&auml;ndler-Login</a></user-login-handler></li>
+           <li><a v-toggle-basket-preview href="#" class="toggle-basket-preview">Einkaufstasche (<span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>)</a></li>
+        </ul>
+      </div>
+    </header>
