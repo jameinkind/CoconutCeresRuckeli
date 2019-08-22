@@ -35,7 +35,7 @@
 </section>
 
 {% set isMyCategory = false %}
-{% for category in item.documents[0].data.defaultCategories if category.id < 22 %}
+{% for category in item.documents[0].data.defaultCategories if category.id == 21 %}
     {% set isMyCategory = true %}
 {% endfor %}
 
