@@ -34,12 +34,12 @@
    {{ LayoutContainer.show("Ceres::Homepage.Container3") }}
 </section>
 
-{% set isMyCategory = false %}
+{% set ruckeliTiles = false %}
 {% for category in item.documents[0].data.defaultCategories if category.id == 21 %}
-    {% set isMyCategory = true %}
+    {% set ruckeliTiles = true %}
 {% endfor %}
 
-{% if isMyCategory %}
+{% if ruckeliTiles %}
 <div class="singleview-addon">
    <div class="singleview-addon-box">
       <div class="singleview-image" onclick="if(document.getElementById('ruckeli_detail_01').style.display=='none'){ document.getElementById('ruckeli_detail_01').style.display='block'; } else {document.getElementById('ruckeli_detail_01').style.display='none'; }">
@@ -132,4 +132,6 @@
    </div>
    <div style="clear:both;height:0"></div>
 </div>
+{% else %}
+<h2>ACCESSOIRES</h2>
 {% endif %}
