@@ -34,12 +34,6 @@
    {{ LayoutContainer.show("Ceres::Homepage.Container3") }}
 </section>
 
-{% set ruckeliTiles = false %}
-{% for category in item.documents[0].data.defaultCategories if category.id == 21 %}
-    {% set ruckeliTiles = true %}
-{% endfor %}
-
-{% if ruckeliTiles %}
 <div class="singleview-addon">
    <div class="singleview-addon-box">
       <div class="singleview-image">
@@ -132,4 +126,3 @@
    </div>
    <div style="clear:both;height:0"></div>
 </div>
-{% endif %}
